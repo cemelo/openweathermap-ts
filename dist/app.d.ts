@@ -8,6 +8,7 @@ declare class OpenWeatherMap extends OpenWeather {
     getThreeHourForecastByCityName(location?: GetByCityNameChild): Promise<ThreeHourResponse>;
     getThreeHourForecastByCityId(cityId?: number): Promise<ThreeHourResponse>;
     getThreeHourForecastByGeoCoordinates(latitude?: number, longitude?: number): Promise<ThreeHourResponse>;
+    getOneCallByGeoCoordinates(latitude?: number, longitude?: number): Promise<ThreeHourResponse>;
     getThreeHourForecastByZipcode(zipcode?: number, countryCode?: CountryCode): Promise<ThreeHourResponse>;
 }
 export default OpenWeatherMap;

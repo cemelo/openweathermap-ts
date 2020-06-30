@@ -242,12 +242,38 @@ var OpenWeatherMap = /** @class */ (function (_super) {
             });
         }); });
     };
+    OpenWeatherMap.prototype.getOneCallByGeoCoordinates = function (latitude, longitude) {
+        var _this = this;
+        return new Promise(function (resolve, reject) { return __awaiter(_this, void 0, void 0, function () {
+            var currentWeather, error_8;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.getByGeoCoordinates({
+                                latitude: latitude,
+                                longitude: longitude,
+                                queryType: helpers_1.FORECAST
+                            })];
+                    case 1:
+                        currentWeather = (_a.sent());
+                        resolve(currentWeather);
+                        return [3 /*break*/, 3];
+                    case 2:
+                        error_8 = _a.sent();
+                        reject(error_8);
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        }); });
+    };
     OpenWeatherMap.prototype.getThreeHourForecastByZipcode = function (zipcode, countryCode) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
                 return [2 /*return*/, new Promise(function (resolve, reject) { return __awaiter(_this, void 0, void 0, function () {
-                        var currentWeather, error_8;
+                        var currentWeather, error_9;
                         return __generator(this, function (_a) {
                             switch (_a.label) {
                                 case 0:
@@ -257,8 +283,8 @@ var OpenWeatherMap = /** @class */ (function (_super) {
                                     currentWeather = (_a.sent());
                                     return [2 /*return*/, resolve(currentWeather)];
                                 case 2:
-                                    error_8 = _a.sent();
-                                    reject(error_8);
+                                    error_9 = _a.sent();
+                                    reject(error_9);
                                     return [3 /*break*/, 3];
                                 case 3: return [2 /*return*/];
                             }

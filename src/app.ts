@@ -130,6 +130,25 @@ class OpenWeatherMap extends OpenWeather {
     });
   }
 
+  public getOneCallByGeoCoordinates(
+    latitude?: number,
+    longitude?: number
+  ): Promise<ThreeHourResponse> {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const currentWeather = (await this.getByGeoCoordinates({
+          latitude,
+          longitude,
+          queryType: FORECAST
+        })) as ThreeHourResponse;
+
+        resolve(currentWeather);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
   public async getThreeHourForecastByZipcode(
     zipcode?: number,
     countryCode?: CountryCode
