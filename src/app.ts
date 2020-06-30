@@ -3,9 +3,10 @@ import {
   CountryCode,
   GetByCityNameChild,
   CurrentResponse,
-  ThreeHourResponse
+  ThreeHourResponse, 
+  OneCallResponse
 } from './types';
-import { WEATHER, FORECAST } from './helpers';
+import { WEATHER, FORECAST, ONE_CALL } from './helpers';
 
 class OpenWeatherMap extends OpenWeather {
   public getCurrentWeatherByCityName(
@@ -133,14 +134,14 @@ class OpenWeatherMap extends OpenWeather {
   public getOneCallByGeoCoordinates(
     latitude?: number,
     longitude?: number
-  ): Promise<ThreeHourResponse> {
+  ): Promise<OneCallResponse> {
     return new Promise(async (resolve, reject) => {
       try {
         const currentWeather = (await this.getByGeoCoordinates({
           latitude,
           longitude,
-          queryType: FORECAST
-        })) as ThreeHourResponse;
+          queryType: ONE_CALL
+        })) as OneCallResponse;
 
         resolve(currentWeather);
       } catch (error) {

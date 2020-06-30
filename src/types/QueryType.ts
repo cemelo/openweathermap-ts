@@ -1,1 +1,1 @@
-export type QueryType = 'weather' | 'forecast'
+export type QueryType = 'weather' | 'forecast' | 'onecall'

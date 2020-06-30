@@ -214,7 +214,7 @@ class OpenWeather {
         latitude = latitude || this.location.geoCoordinates.latitude;
         longitude = longitude || this.location.geoCoordinates.longitude;
 
-        const query = `lat=${latitude}&lon=${longitude}`;
+        const query = `lat=${latitude}&lon=${longitude}&exclude=minutely`;
         const request = this.buildURL(queryType, query);
 
         const response = await fetch(request);
