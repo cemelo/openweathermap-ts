@@ -1,5 +1,5 @@
 import OpenWeather from './OpenWeather';
-import { CountryCode, GetByCityNameChild, CurrentResponse, ThreeHourResponse } from './types';
+import { CountryCode, GetByCityNameChild, CurrentResponse, ThreeHourResponse, OneCallResponse } from './types';
 declare class OpenWeatherMap extends OpenWeather {
     getCurrentWeatherByCityName(location?: GetByCityNameChild): Promise<CurrentResponse>;
     getCurrentWeatherByCityId(cityId?: number): Promise<CurrentResponse>;
@@ -8,7 +8,7 @@ declare class OpenWeatherMap extends OpenWeather {
     getThreeHourForecastByCityName(location?: GetByCityNameChild): Promise<ThreeHourResponse>;
     getThreeHourForecastByCityId(cityId?: number): Promise<ThreeHourResponse>;
     getThreeHourForecastByGeoCoordinates(latitude?: number, longitude?: number): Promise<ThreeHourResponse>;
-    getOneCallByGeoCoordinates(latitude?: number, longitude?: number): Promise<ThreeHourResponse>;
+    getOneCallByGeoCoordinates(latitude?: number, longitude?: number): Promise<OneCallResponse>;
     getThreeHourForecastByZipcode(zipcode?: number, countryCode?: CountryCode): Promise<ThreeHourResponse>;
 }
 export default OpenWeatherMap;

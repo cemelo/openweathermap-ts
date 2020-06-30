@@ -1,1 +1,1 @@
-export declare type QueryType = 'weather' | 'forecast';
+export declare type QueryType = 'weather' | 'forecast' | 'onecall';

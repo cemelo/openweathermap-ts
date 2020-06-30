@@ -253,7 +253,7 @@ var OpenWeatherMap = /** @class */ (function (_super) {
                         return [4 /*yield*/, this.getByGeoCoordinates({
                                 latitude: latitude,
                                 longitude: longitude,
-                                queryType: helpers_1.FORECAST
+                                queryType: helpers_1.ONE_CALL
                             })];
                     case 1:
                         currentWeather = (_a.sent());

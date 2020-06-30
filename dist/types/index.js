@@ -18,3 +18,4 @@ __exportStar(require("./Constructor"), exports);
 __exportStar(require("./Methods"), exports);
 __exportStar(require("./ThreeHourResponse"), exports);
 __exportStar(require("./CurrentReponse"), exports);
+__exportStar(require("./OneCallResponse"), exports);

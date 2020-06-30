@@ -219,7 +219,7 @@ var OpenWeather = /** @class */ (function () {
                         }
                         latitude = latitude || this.location.geoCoordinates.latitude;
                         longitude = longitude || this.location.geoCoordinates.longitude;
-                        query = "lat=" + latitude + "&lon=" + longitude;
+                        query = "lat=" + latitude + "&lon=" + longitude + "&exclude=minutely";
                         request = this.buildURL(queryType, query);
                         return [4 /*yield*/, node_fetch_1.default(request)];
                     case 1:
